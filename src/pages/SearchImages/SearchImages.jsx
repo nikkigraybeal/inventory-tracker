@@ -1,19 +1,53 @@
 // styles
 import './SearchImages.css'
 
-export default function SearchImages() {
+import { useState } from 'react'
 
+export default function SearchImages() {
+  const [images, setImages] = useState(null)
+  const [searchInput, setSearchInput] = useState("")
+  
+  const API_KEY = process.env.REACT_APP_UNSPLASH_API_KEY
+
+  function makeRequestToUnsplash(requestUrl){
+    fetch(requestUrl)
+      .then( res => res.json())
+      .then((data) => {
+        setImages(data.results)
+      });
+  };
+
+  const normalizeInput = (input) => {
+    return input.split(" ").join("-")
+  }
+  
+  const handleSearch = () => {
+    const input = normalizeInput(searchInput)
+    const request = `https://api.unsplash.com/search/photos?page=1&query=${input}&client_id=${API_KEY}`;
+  
+    makeRequestToUnsplash(request)
+  }
+  
   return (
     <div className="search-images">
       <h1>Product Image Search</h1>
       <p>Enter search terms to find product images then cick on the image you wish to use.</p>
+      
       <div className="search-div">
-        <input type="text" placeholder="search" />
-        <button >find images</button>
+        <input type="text" 
+               onChange={(e) => setSearchInput(e.target.value)}
+               placeholder="search" />
+        <button onClick={handleSearch}>find images</button>
       </div>
       
-      <div id = "img-box">
-        images mapped here
+      <div id="img-box">
+        {images && images.map(image => {
+          return (
+            <div className="img-div" key={image.id}>
+              <img className="image" src={image.urls.regular} alt={image.alt_description} />
+            </div>
+          )
+       })}
       </div>
     </div>
   )
