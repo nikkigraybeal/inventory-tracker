@@ -46,3 +46,7 @@ img {
   overflow: hidden;
   border: double 4px black; 
 }
+
+.hide {
+  display: none;
+}
