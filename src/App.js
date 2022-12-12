@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // components
-import Catalogue from './components/Catalogue/Catalogue'
-import AddProduct from './components/AddProduct/AddProduct'
+import Catalogue from './pages/Catalogue/Catalogue'
+import AddProduct from './pages/AddProduct/AddProduct'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
 import SearchImages from './pages/SearchImages/SearchImages'
 
