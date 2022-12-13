@@ -4,6 +4,7 @@ import { onSnapshot, collection } from 'firebase/firestore'
 import { db } from './firebase/config';
 
 // components
+import Nav from './components/Nav/Nav'
 import Catalogue from './pages/Catalogue/Catalogue'
 import AddProduct from './pages/AddProduct/AddProduct'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
@@ -36,7 +37,6 @@ function App() {
               units: parseInt(doc.units),
               price: parseFloat(doc.price)
             }})
-          console.log(normalizedResults)
           setData(normalizedResults)
           setIsPending(false)
         })
@@ -59,8 +59,8 @@ function App() {
   
   return (
     <div className="App">
-      <h1>Inventory Tracker</h1>
       <BrowserRouter>
+        <Nav></Nav>
         <Routes>
           <Route exact path="/" element={ 
             <Catalogue data={data} 
