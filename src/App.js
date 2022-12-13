@@ -30,7 +30,14 @@ function App() {
         let results = []
         snapshot.docs.forEach((doc) => {
           results.push({ ...doc.data(), id: doc.id})
-          setData(results)
+          let normalizedResults = results.map(doc => {
+            return {
+              ...doc,
+              units: parseInt(doc.units),
+              price: parseFloat(doc.price)
+            }})
+          console.log(normalizedResults)
+          setData(normalizedResults)
           setIsPending(false)
         })
       }

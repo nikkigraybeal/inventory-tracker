@@ -11,7 +11,6 @@ export default function Catalogue({ data, error, isPending }) {
 
   return (
      <div>
-      {console.log(data)}
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">Loading...</p>}
       {data && 
