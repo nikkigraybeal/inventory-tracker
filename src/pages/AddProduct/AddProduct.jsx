@@ -1,7 +1,7 @@
 import { db } from '../../firebase/config'
 import { collection, addDoc } from 'firebase/firestore'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 // styles
 import './AddProduct.css'
@@ -20,6 +20,7 @@ export default function AddProduct({ imgData }) {
     price: 0.00
   })
 
+  const navigate = useNavigate()
   const colRef = collection(db, 'products')
 
   const handleAdd = (e) => {
@@ -29,6 +30,7 @@ export default function AddProduct({ imgData }) {
       ...newProduct, 
       purchaseDate: purchaseDate
     })
+    navigate('/')
   }
 
   const handleImageSourceChange = (e) => {

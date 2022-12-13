@@ -5,7 +5,6 @@ import './Nav.css'
 
 export default function Nav() {
   const location = useLocation()
-  console.log(location)
 
   return (
     <div>
