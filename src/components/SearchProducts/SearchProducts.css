@@ -1,3 +1,10 @@
 .search-products {
-  border: 2px black solid;
+  border: 2px solid black;
+}
+.search-products {
+  padding: 20px 0;
+  background: lightblue;
+}
+.search-products input {
+  background: lightgrey;
 }

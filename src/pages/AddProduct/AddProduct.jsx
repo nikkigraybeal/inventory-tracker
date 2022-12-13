@@ -7,7 +7,7 @@ import './AddProduct.css'
 
 export default function AddProduct() {
   const [newProduct, setNewProduct] = useState({
-    lastUpdate: new Date(),
+    lastUpdate: new Date().toDateString(),
     imgSrc: "",
     imgAlt: "",
     purchaseDate: "",
@@ -21,8 +21,11 @@ export default function AddProduct() {
 
   const handleAdd = (e) => {
     e.preventDefault()
-
-    addDoc(colRef, newProduct)
+    const purchaseDate = new Date(e.target.value).toDateString()
+    addDoc(colRef, {
+      ...newProduct, 
+      purchaseDate: purchaseDate
+    })
   }
 
   const handleImageSourceChange = (e) => {

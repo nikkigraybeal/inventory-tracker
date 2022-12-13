@@ -1,3 +1,9 @@
 .product {
   border: 2px black solid;
 }
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
