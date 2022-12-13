@@ -1,15 +1,18 @@
 import { db } from '../../firebase/config'
 import { collection, addDoc } from 'firebase/firestore'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 // styles
 import './AddProduct.css'
 
-export default function AddProduct() {
+export default function AddProduct({ imgData }) {
+  const imgSrc = imgData ? imgData.imgSrc : ""
+  const imgAlt = imgData ? imgData.imgAlt : ""
   const [newProduct, setNewProduct] = useState({
     lastUpdate: new Date().toDateString(),
-    imgSrc: "",
-    imgAlt: "",
+    imgSrc,
+    imgAlt,
     purchaseDate: "",
     name: "",
     description: "",
@@ -21,7 +24,7 @@ export default function AddProduct() {
 
   const handleAdd = (e) => {
     e.preventDefault()
-    const purchaseDate = new Date(e.target.value).toDateString()
+    const purchaseDate = new Date(newProduct.purchaseDate).toDateString()
     addDoc(colRef, {
       ...newProduct, 
       purchaseDate: purchaseDate
@@ -82,20 +85,27 @@ export default function AddProduct() {
       <form action="" 
             onSubmit={handleAdd} 
             className="add-form">
-        <div className="img-div">
-          <img src="mock" alt="mock"/>
-        </div>
+       {!imgData && 
+         <div className="img-div">
+           <Link to='/searchimages'>Find Product Images</Link>
+         </div>
+       }
+       {imgData && 
+         <div className="img-div">
+           <img src={imgData.imgSrc} alt={imgData.imgAlt}/>
+         </div>
+       }
         <input className="hide" 
                type="text" 
                onChange={handleImageSourceChange}
                placeholder="img src" 
-               value={newProduct.imgSrc}
+               value={imgData ? imgData.imgSrc : ""}
                />
         <input className="hide" 
                type="text" 
                onChange={handleAltDescChange}
                placeholder="alt desc" 
-               value={newProduct.imgAlt}
+               value={imgData ? imgData.imgAlt : ""}
                />
 
         <label>Product Name: </label>

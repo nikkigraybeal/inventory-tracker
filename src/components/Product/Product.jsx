@@ -20,10 +20,10 @@ const totalValue = (price * units).toFixed(2)
         <div>
         <Link to={`/${product.id}`}><h4>{product.name}</h4></Link>
         </div>
-        <div>
+        <div className="btn-div">
           <h5>Units</h5><span>{units}</span>
-          <button>+</button>
-          <button>-</button>
+          <button className="small-btn">+</button>
+          <button className="small-btn">-</button>
         </div>
         <div>
           <h5>Total Value</h5><span>${totalValue}</span>

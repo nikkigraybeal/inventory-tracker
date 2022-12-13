@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom'
+
 // styles
 import './SearchImages.css'
 
 import { useState } from 'react'
 
-export default function SearchImages() {
+export default function SearchImages({ handleChooseImage }) {
   const [images, setImages] = useState(null)
   const [searchInput, setSearchInput] = useState("")
   
@@ -43,8 +45,14 @@ export default function SearchImages() {
       <div id="img-box">
         {images && images.map(image => {
           return (
-            <div className="img-div" key={image.id}>
-              <img className="image" src={image.urls.regular} alt={image.alt_description} />
+            <div className="img-div" 
+                  key={image.id}>
+              <Link to='/addproduct'><img className="image" 
+                  src={image.urls.regular} 
+                  alt={image.alt_description}
+                  onClick={handleChooseImage}
+                  />
+              </Link>
             </div>
           )
        })}

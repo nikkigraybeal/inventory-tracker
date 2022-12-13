@@ -7,3 +7,22 @@
   justify-content: center;
   align-items: center;
 }
+.product .btn-div {
+  position: relative;
+}
+.small-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 10px;
+  height: 20px;
+}
+.small-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 10px;
+  height: 20px;
+}
