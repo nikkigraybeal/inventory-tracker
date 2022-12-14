@@ -56,6 +56,10 @@ function App() {
                 imgAlt: e.target.alt
                })
   }
+
+  const handleResetImage = () => {
+    setImgData(null)
+  }
   
   return (
     <div className="App">
@@ -67,7 +71,8 @@ function App() {
                        error={error} 
                        isPending={isPending}/>} 
                        />
-          <Route exact path="/addProduct" element={ <AddProduct imgData={imgData}/>} />
+          <Route exact path="/addProduct" element={ <AddProduct imgData={imgData}
+                                                                handleResetImage={handleResetImage}/>} />
           <Route exact path="/:id" element={ 
             <ProductDetails data={data}
                             error={error}

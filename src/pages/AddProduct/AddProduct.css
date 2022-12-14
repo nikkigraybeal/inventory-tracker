@@ -1,7 +1,5 @@
 .add-product {
-  border: 2px black solid;
-  background: lightblue;
-  padding: 10px 0;
+  margin-top: 140px;
 }
 .img-placeholder-div {
   display: flex;
@@ -21,8 +19,5 @@
   align-items: center;
 }
 .add-form textarea {
-  margin: 5px 0 10px;
-  width: 60%;
-  height: 40px;
-  background: lightgrey;
+  
 }

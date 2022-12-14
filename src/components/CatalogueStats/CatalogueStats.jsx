@@ -9,12 +9,25 @@ export default function CatalogueStats({ products }) {
   }
  
   return (
-    <div className="catalogue-stats">
+    <div className="catalogue-stats card">
       {products && 
       <div>
-        <p>Products: {products.length}</p>
-        <p>Total Quantity: {units}</p>
-        <p>Total Value: $ {totalValue.toFixed(2)}</p>
+        <h2>Inventory Summary</h2>
+        <div className="stats">
+          <div className="stat">
+            <p className="stat-label">Products: </p>
+            <p className="stat-value">{products.length}</p>
+          </div>
+          <div className="stat">
+            <p className="stat-label">Total Qty:</p>
+            <p className="stat-value">{units}</p>
+          </div>
+          <div className="stat">
+            <p className="stat-label">Total Value:</p>
+            <p className="stat-value">${totalValue.toFixed(2)}</p>
+          </div>
+        </div>
+        
       </div>
       }
     </div>

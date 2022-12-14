@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 // styles
 import './AddProduct.css'
 
-export default function AddProduct({ imgData }) {
+export default function AddProduct({ imgData, handleResetImage }) {
   const imgSrc = imgData ? imgData.imgSrc : ""
   const imgAlt = imgData ? imgData.imgAlt : ""
   const [newProduct, setNewProduct] = useState({
@@ -18,7 +18,7 @@ export default function AddProduct({ imgData }) {
     description: "",
     units: 0,
     price: 0.00
-  })
+  }) 
 
   const navigate = useNavigate()
   const colRef = collection(db, 'products')
@@ -30,6 +30,7 @@ export default function AddProduct({ imgData }) {
       ...newProduct, 
       purchaseDate: purchaseDate
     })
+    handleResetImage()
     navigate('/')
   }
 
@@ -83,7 +84,7 @@ export default function AddProduct({ imgData }) {
   }
 
   return (
-    <div className="add-product">
+    <div className="add-product card">
       <form action="" 
             onSubmit={handleAdd} 
             className="add-form">

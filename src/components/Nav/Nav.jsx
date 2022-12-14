@@ -7,11 +7,11 @@ export default function Nav() {
   const location = useLocation()
 
   return (
-    <div>
-      <h2>Inventory Tracker</h2>
+    <div className="nav-div">
+      <h1>Inventory Tracker</h1>
       {location.pathname !== '/' ? 
-      <Link to="/">Home</Link> :
-      <Link to="/addproduct">Add Product</Link>
+      <Link to="/"><button>Home</button></Link> :
+      <Link to="/addproduct"><button>Add Product</button></Link>
       } 
     </div>
   )

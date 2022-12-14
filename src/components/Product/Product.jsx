@@ -28,7 +28,7 @@ const handleDelete = () => {
 }
 
   return (
-    <div className="product">
+    <div className="product card">
       <div className="img-div">
         <img src={product.imgSrc} alt={product.imgAlt} />
       </div>

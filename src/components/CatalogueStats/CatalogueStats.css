@@ -1,10 +1,28 @@
 .catalogue-stats {
-  border: 2px black solid;
+  
 }
-.catalogue-stats {
-  background: lightgrey;
-  padding: 10px 0;
+.catalogue-stats h2 {
+  font-size: 15px;
+  font-weight: 900;
 }
 .catalogue-stats p {
+  font-size: 13px;
   padding: 5px;
+}
+.stat-label {
+  color: rgb(144, 145, 150);
+}
+.stat-value {
+  position: relative;
+  bottom: 15px;
+}
+
+@media screen and (min-width: 450px) {
+  .stats {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .stat {
+    text-align: left;
+  }
 }
