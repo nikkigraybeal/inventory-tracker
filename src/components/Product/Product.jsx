@@ -1,15 +1,29 @@
 import { Link } from 'react-router-dom'
 import { db } from '../../firebase/config'
-import { deleteDoc, doc } from 'firebase/firestore'
+import { deleteDoc, doc, updateDoc } from 'firebase/firestore'
 
 // styles
 import './Product.css'
 
 export default function Product({ product }) {
 const totalValue = (product.price * product.units).toFixed(2)
+const productRef = doc(db, 'products', product.id)
+
+const handleIncrementUnits = () => {
+  const units = product.units + 1
+  updateDoc(productRef, {
+    units
+  })
+}
+
+const handleDecrementUnits = () => {
+  const units = product.units -1 
+  updateDoc(productRef, {
+    units
+  })
+}
 
 const handleDelete = () => {
-  const productRef = doc(db, 'products', product.id)
   deleteDoc(productRef)
 }
 
@@ -24,9 +38,13 @@ const handleDelete = () => {
         <Link to={`/${product.id}`}><h4>{product.name}</h4></Link>
         </div>
         <div className="btn-div">
-          <h5>Units</h5><span>{product.units}}</span>
-          <button className="small-btn">+</button>
-          <button className="small-btn">-</button>
+          <h5>Units</h5><span>{product.units}</span>
+          <button className="small-btn"
+                  onClick={handleIncrementUnits}
+                  >+</button>
+          <button className="small-btn"
+                  onClick={handleDecrementUnits}
+                  >-</button>
         </div>
         <div>
           <h5>Total Value</h5><span>${totalValue}</span>
