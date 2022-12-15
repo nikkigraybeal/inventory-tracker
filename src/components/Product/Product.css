@@ -7,6 +7,7 @@
 }
 .prod-stat {
   text-align: left;
+  font-size: 20px;
 }
 .prod-stat p{
   position: relative;
@@ -18,7 +19,7 @@
   width: 80%;
   max-width: 200px;
   margin: 0 5px;
-  height: 90px;
+  height: 100px;
 }
 .prod-stat button {
   background: transparent;
@@ -27,8 +28,11 @@
   height: 15px;
   padding: 0 10px;
   position: relative;
-  bottom: 60px;
+  bottom: 64px;
   left: 15px;
+}
+.delete {
+  margin-top: 35px;
 }
 
 

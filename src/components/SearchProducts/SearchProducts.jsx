@@ -6,10 +6,8 @@ import './SearchProducts.css'
 
 export default function SearchProducts({ products }) {
   const [searchInput, setSearchInput] = useState("")
-
-  //filter product names 
   const filteredProducts = products.filter(p => p.name.includes(searchInput))
-  //map list of filtered products with product name as link to details
+
   return (
     <div className="search-products card">
       <input type="text" 

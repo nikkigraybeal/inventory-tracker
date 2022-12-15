@@ -3,12 +3,21 @@
   top: 0;
   left: 0;
   width: 100%;
-  height:100px;
+  height:120px;
   padding-bottom: 20px; 
   background: white;
   z-index: 1;
 }
+.nav-items {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 725px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
 .nav-div h1 {
+  font-family: 'Sriracha', cursive;
   font-size: 30px;
   margin-left: 5px;
 }
@@ -18,18 +27,26 @@
 
 @media screen and (min-width: 450px) {
   .nav-div {
-    height: 60px;
+    height: 85px;
+  }
+  .nav-items {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
   }
-  .nav-div h1 {
+  .nav-items h1 {
     position: relative;
-    top: 30px;
+    top: 25px;
   }
-  .nav-div button {
+  .nav-items button {
     position: relative;
-    top: 10px;
+    top: 0px;
   }
   
+}
+
+@media screen and (min-width: 725px) {
+  .nav-div {
+    
+  }
 }

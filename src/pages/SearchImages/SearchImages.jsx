@@ -31,7 +31,7 @@ export default function SearchImages({ handleChooseImage }) {
   }
   
   return (
-    <div className="search-images">
+    <div className="search-images card">
       <h1>Product Image Search</h1>
       <p>Enter search terms to find product images then cick on the image you wish to use.</p>
       

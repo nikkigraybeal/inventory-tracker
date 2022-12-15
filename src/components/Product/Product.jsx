@@ -34,7 +34,6 @@ const handleDelete = () => {
       </div>
       <div className="name-nav">
         <Link to={`/${product.id}`}><h2>{product.name}</h2></Link>
-        <Link to={`/${product.id}`}><button>product detail</button></Link>
       </div>
 
       <div className="quick-stats">

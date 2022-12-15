@@ -19,39 +19,26 @@ export default function ProductDetails({ data, error, isPending}) {
       {error && <div className="error">{error}</div>}
       {product &&
         <div>
-          <div>
+          <div className="prod-details-name">
             <h3>{product.name}</h3>
           </div>
           <div className="img-div">
             <img src={product.imgSrc} alt={product.imgAlt} />
-            <div>
-              <p>{product.description}</p>
-            </div>
+          </div>
+
+          <div className="product-details-desc">
+            <p><b>Description:</b> {product.description}</p>
           </div>
     
           <div className="product-stats">
-            <div>Quantity: {units}</div>
-            <div>Total Value: $ {price}</div>
-            <div>Last Update: {product.lastUpdate}</div>
+            <div>Quantity <b>{units}</b></div>
+            <div>Total Value <b>$ {totalVal}</b></div>
+            <div>Last Update <b>{product.lastUpdate}</b></div>
           </div>
     
-          <div className="product-details">
-            <div>
-              <h4>Quantity</h4>
-              <div>{units}</div>
-            </div>
-            <div>
-              <h4>Purchase Date</h4>
-              <div>{product.purchaseDate}</div>
-            </div>
-            <div>
-              <h4>Price</h4>
-              <div>$ {price}</div>
-            </div>
-            <div>
-              <h4>Total Value</h4>
-              <div>$ {totalVal}</div>
-            </div>
+          <div className="product-stats">
+          <div>Price<b>$ {price}</b></div>
+            <div>Purchase Date <b>{product.purchaseDate}</b></div>
           </div>
         </div>}
     </div>
