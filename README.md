@@ -2,7 +2,8 @@ Inventory Tracker is a simple inventory system that allows users to add items an
 
 I built this project to practice my React skills and practice seting up and using Firesbase Firestore and Hosting. 
 
-View and try the project live: 
+View and try the project live: https://inventory-tracker-1bd32.web.app/addproduct
+The image search function isn't available here yet, as I still need to learn how to provide Firebase hosting with my API key!
 
 Check it out on GitHub: https://github.com/nikkigraybeal/inventory-tracker
 
