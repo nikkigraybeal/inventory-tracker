@@ -89,9 +89,8 @@ export default function AddProduct({ imgData, handleResetImage }) {
             onSubmit={handleAdd} 
             className="add-form">
        {!imgData && 
-         <div className="img-div">
-           <Link to='/searchimages'>Find Product Images</Link>
-         </div>
+           <Link to='/searchimages'><button>Find Product Images</button></Link>
+       
        }
        {imgData && 
          <div className="img-div">

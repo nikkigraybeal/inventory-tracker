@@ -18,6 +18,10 @@
   justify-content: flex-start;
   align-items: center;
 }
+.add-form button {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
 .add-form textarea {
   
 }

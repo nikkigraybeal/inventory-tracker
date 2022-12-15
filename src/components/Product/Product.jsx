@@ -32,37 +32,31 @@ const handleDelete = () => {
       <div className="img-div">
         <img src={product.imgSrc} alt={product.imgAlt} />
       </div>
-
-      <div>
-        <div>
-        <Link to={`/${product.id}`}><h4>{product.name}</h4></Link>
-        </div>
-        <div className="btn-div">
-          <h5>Units</h5><span>{product.units}</span>
-          <button className="small-btn"
-                  onClick={handleIncrementUnits}
-                  >+</button>
-          <button className="small-btn"
-                  onClick={handleDecrementUnits}
-                  >-</button>
-        </div>
-        <div>
-          <h5>Total Value</h5><span>${totalValue}</span>
-        </div>
+      <div className="name-nav">
+        <Link to={`/${product.id}`}><h2>{product.name}</h2></Link>
+        <Link to={`/${product.id}`}><button>product detail</button></Link>
       </div>
 
-      <div>
-        <div>
-          <h5>Purchase Date</h5><span>{product.purchaseDate}</span>
+      <div className="quick-stats">
+
+        <div className="prod-stat units">
+          <h5>Units</h5>
+          <div className="buttons">
+            <p>{product.units}</p>
+            <button onClick={handleIncrementUnits}>+</button>
+            <button onClick={handleDecrementUnits}>-</button> 
+          </div>
+          
         </div>
-        <div>
-          <h5>Last Update</h5><span>{product.lastUpdate}</span>
+        
+       
+        <div className="prod-stat value">
+          <h5>Total Value</h5><p>${totalValue}</p>
         </div>
-        <div>
-          <h5>Retail Price</h5><span>${product.price.toFixed(2)}</span>
-        </div>
+
       </div>
-      <button onClick={handleDelete}>Delete</button>
+
+      <button className="delete" onClick={handleDelete}>Delete</button>
     </div>
   )
 }

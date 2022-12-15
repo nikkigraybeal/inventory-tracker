@@ -14,7 +14,7 @@ export default function ProductDetails({ data, error, isPending}) {
   }
   
   return (
-    <div className="product-details">
+    <div className="product-details card">
       {isPending && <div className="loading">Loading...</div>}
       {error && <div className="error">{error}</div>}
       {product &&

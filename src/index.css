@@ -44,6 +44,9 @@ textarea {
   border: 1px solid rgb(183, 184, 188);
   border-radius: 6px;
 }
+a {
+  text-decoration: none;
+}
 
 img {
   width: 100%;
@@ -66,7 +69,6 @@ img {
   height: auto;
   max-height: 300px;
   width: 100%;
-  max-width: ;
   overflow: hidden; 
 }
 

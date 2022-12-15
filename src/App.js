@@ -64,7 +64,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Nav></Nav>
+        <Nav handleResetImage={handleResetImage}></Nav>
         <Routes>
           <Route exact path="/" element={ 
             <Catalogue data={data} 

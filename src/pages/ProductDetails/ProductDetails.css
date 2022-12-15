@@ -1,3 +1,11 @@
 .product-details {
-  border: 2px black solid;
+  margin-top: 124px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.product-details .img-div {
+  margin: 0;
 }

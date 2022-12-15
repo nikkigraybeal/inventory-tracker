@@ -3,23 +3,32 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.product .btn-div {
   position: relative;
 }
-.small-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 10px;
-  height: 20px;
+.prod-stat {
+  text-align: left;
 }
-.small-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.prod-stat p{
   position: relative;
-  width: 10px;
-  height: 20px;
+  bottom: 20px;
 }
+.quick-stats {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 200px;
+  margin: 0 5px;
+  height: 90px;
+}
+.prod-stat button {
+  background: transparent;
+  font-size: 23px;
+  width: 20px;
+  height: 15px;
+  padding: 0 10px;
+  position: relative;
+  bottom: 60px;
+  left: 15px;
+}
+
+
