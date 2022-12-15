@@ -6,7 +6,7 @@ import './SearchProducts.css'
 
 export default function SearchProducts({ products }) {
   const [searchInput, setSearchInput] = useState("")
-  const filteredProducts = products.filter(p => p.name.includes(searchInput))
+  const filteredProducts = products.filter(p => p.name.toLowerCase().includes(searchInput.toLowerCase()))
 
   return (
     <div className="search-products card">
